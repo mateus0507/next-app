@@ -1,0 +1,29 @@
+name: CI-CD Next App
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  check-sync:
+    uses: mateus0507/pipeline-templates/.github/workflows/check-main-sync.yaml@main
+
+  build-next:
+    needs: check-sync
+    uses: mateus0507/pipeline-templates/.github/workflows/next-build.yaml@main
+    with:
+      node_version: "20"
+
+  docker-build:
+    needs: build-next
+    uses: mateus0507/pipeline-templates/.github/workflows/docker-build.yaml@main
+    with:
+      image_name: next-app
+      context_dir: . 
