@@ -64,7 +64,4 @@ jobs:
       # "." significa a raiz do repositório atual
       context_dir: .
 
-      #teste 1
-      #teste 2
-      #teste 3 
-      #teste errado
+      #testando se o docekr vai funcinar 
