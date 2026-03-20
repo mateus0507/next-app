@@ -28,7 +28,7 @@ on:
 
 # Variável global que define o tipo do projeto (react ou next)
 env:
-  STACK_TYPE: react
+  STACK_TYPE: next
 
 # Define os jobs da pipeline
 jobs:
