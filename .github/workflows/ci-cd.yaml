@@ -15,7 +15,7 @@ jobs:
     uses: mateus0507/pipeline-templates/.github/workflows/exec-templates.yaml@main
     secrets: inherit
     with:
-      STACK_TYPE: "next"
+      STACK_TYPE: "react"
       version: ""
       #teste1
       #teste2
