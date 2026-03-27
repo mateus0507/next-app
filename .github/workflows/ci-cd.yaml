@@ -18,3 +18,4 @@ jobs:
       STACK_TYPE: "next" #Escolha entre "next" ou "react"
       version: "20"
       #teste
+      #teste2
