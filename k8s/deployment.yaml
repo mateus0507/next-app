@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: minha-app
-          image: mateussousa/minha-app:1
+          image: ${{ inputs.STACK_TYPE }}-app:${{ github.sha }}
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
