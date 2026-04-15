@@ -15,6 +15,6 @@ spec:
       containers:
         - name: minha-app
           image: mateussousa/minha-app:1
-          imagePullPolicy: Always
+          imagePullPolicy: Never
           ports:
             - containerPort: 3000
