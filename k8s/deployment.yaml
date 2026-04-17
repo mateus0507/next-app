@@ -1,20 +1,23 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: apps/v1  # Define a versão da API do Kubernetes utilizada
+kind: Deployment  # Define o tipo de recurso (Deployment gerencia pods)
 metadata:
-  name: minha-app
+  name: minha-app  # Nome do deployment no Kubernetes
+
 spec:
-  replicas: 1
+  replicas: 1  # Quantidade desejada de pods rodando
   selector:
     matchLabels:
-      app: minha-app
+      app: minha-app  # Define quais pods pertencem a esse deployment
+
   template:
     metadata:
       labels:
-        app: minha-app
+        app: minha-app  # Label aplicada aos pods criados
+
     spec:
       containers:
-        - name: minha-app
-          image: IMAGE_PLACEHOLDER
-          imagePullPolicy: Always
+        - name: minha-app  # Nome do container dentro do pod
+          image: IMAGE_PLACEHOLDER  # Placeholder que será substituído pela pipeline pela imagem real
+          imagePullPolicy: Always  # Sempre tenta puxar a imagem mais recente do registry
           ports:
-            - containerPort: 3000
+            - containerPort: 3000  # Porta exposta pela aplicação dentro do container

@@ -1,12 +1,16 @@
-apiVersion: v1
-kind: Service
+apiVersion: v1  # Define a versão da API do Kubernetes
+kind: Service  # Define o tipo de recurso (Service expõe a aplicação)
+
 metadata:
-  name: minha-app
+  name: minha-app  # Nome do service no Kubernetes
+
 spec:
   selector:
-    app: minha-app
+    app: minha-app  # Seleciona os pods com essa label (liga o service ao deployment)
+
   ports:
-    - protocol: TCP
-      port: 3000
-      targetPort: 3000
-  type: NodePort
+    - protocol: TCP  # Protocolo usado na comunicação
+      port: 3000  # Porta exposta pelo service dentro do cluster
+      targetPort: 3000  # Porta do container (onde a aplicação realmente roda)
+
+  type: NodePort  # Tipo de service que expõe a aplicação em uma porta do node (acesso externo)
